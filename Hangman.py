@@ -1,23 +1,23 @@
 from random import *
 
-def englishDict():    
+def englishDict():    #reading the text file to a list
     s=open("englishWords.txt","r",encoding="utf-8")
     dictionary=s.read().split()
     s.close()
     return dictionary
 
-def word_selection(dict):
+def word_selection(dict): #selecting random word from the list dictionary
     num=randint(0,len(dict))
     return dict[num]
 
-def list_to_str(lst):
+def list_to_str(lst): #from list to string
     s=''
     for x in range(len(lst)):
         s+=lst[x]
 
     return s
 
-def check(word,char,dis):
+def check(word,char,dis): #checks if char exits in word and modifies dis if so 
     lst=[]
     for i in range(len(word)):
         if(word[i]==char):
@@ -43,7 +43,7 @@ def print_list(used):
         s+="{},".format(used[x])
     print("Used letters:{}\n".format(s))
 
-def play(word_bot):
+def play(word_bot): #main function that lets you play the game
     lives=7
     dis=" "
     used=[]
